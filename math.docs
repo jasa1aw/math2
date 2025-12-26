@@ -1,0 +1,3703 @@
+q/1категория
+1. Let p be a proposition. The statement “It is not the case that p” is denoted by
+ p
+
+
+o p
+
+o p
+p 
+
+o p
+p 
+
+p 
+o p
+2. Let p and q be propositions. The proposition that is true when both p and q are true
+and is false otherwise is denoted by
+ q
+p 
+p 
+o q
+o q
+p 
+o q
+p 
+o q
+p 
+3. Let p and q be propositions. The proposition that is false when p and q are both false
+and is true otherwise is denoted by
+ q
+p 
+p 
+o q
+o q
+p 
+o q
+p 
+o q
+p 
+4. Let p and q be propositions. The proposition that is true when exactly one of p and q is
+true and is false otherwise is denoted by
+p 
+ q
+p 
+o q
+o q
+p 
+o q
+p 
+p 
+o q
+5. Let p and q be propositions. The proposition that is false when p is true and q is false
+and is true otherwise is denoted by
+ q
+p 
+p 
+o q
+p 
+o q
+o q
+p 
+o q
+p 
+6. Let p and q be propositions. The proposition that is true when p and q have the same
+truth values and is false otherwise is denoted by
+ q
+p 
+p 
+o q
+o q
+p 
+p 
+o q
+o q
+p 
+7. Which of the following sentences is a proposition?
+ 3 + 2 = 6
+o Can you help me?
+o Take this pencil.
+o x + 2 = 6
+o Why should you study discrete mathematics?
+8. Find the converse of q
+p 
+.
+ p
+
+q 
+
+o p
+q 
+o p
+q 
+
+
+o p
+q 
+o q
+p 
+9. Find the contrapositive of q
+ .
+p 
+ p
+
+q 
+
+o p
+q 
+
+o q
+p 
+
+
+o p
+q 
+o q
+p 
+10. Find the bitwise OR of the bit strings 1011 0010 and 0110 0110.
+ 1111 0110
+o 0010 0011
+o 0011 0011
+o 1010 1001
+o 0111 1100
+11. Find the bitwise AND of the bit strings 1010 1010 and 1001 1001.
+ 1000 1000
+o 1011 1011
+o 0011 0011
+o 1100 1100
+o 0101 0101
+12. Find the bitwise XOR of the bit strings 0111 0101 and 1101 0101.
+ 1010 0000
+o 1111 0111
+o 0101 0100
+o 0110 1010
+o 1101 0101
+13. Construct the truth table for the proposition )
+( q
+p 
+.
+q
+)
+
+(
+
+p
+
+
+( q
+p q )
+p 
+q
+)
+
+(
+
+p
+T
+T
+F
+F
+T
+F
+T
+F
+T
+T
+T
+T
+o
+
+p q )
+( q
+p 
+q
+)
+
+(
+
+p
+T
+T
+F
+F
+T
+F
+T
+F
+T
+T
+F
+T
+o
+
+p q )
+
+p 
+q
+)
+(
+( q
+
+p
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+o
+
+p q )
+( q
+p 
+q
+)
+
+(
+
+p
+T
+T
+F
+F
+T
+F
+T
+F
+F
+F
+T
+F
+o
+
+p q )
+
+p 
+q
+)
+(
+( q
+
+p
+T
+T
+F
+F
+T
+F
+T
+F
+F
+T
+T
+F
+14. Construct the truth table for the proposition )
+ .
+p 
+( r
+
+q
+
+
+p q r )
+p 
+( r
+
+q
+T
+T
+T
+T
+F
+F
+F
+F
+T
+T
+F
+F
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+F
+F
+F
+T
+T
+T
+T
+F
+o
+
+p q r )
+p 
+( r
+
+q
+T
+T
+T
+T
+F
+F
+F
+F
+T
+T
+F
+F
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+T
+T
+F
+T
+T
+T
+T
+o
+
+p q r )
+p 
+( r
+
+q
+T
+T
+T
+T
+F
+F
+F
+F
+T
+T
+F
+F
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+F
+o
+
+p q r )
+p 
+( r
+
+q
+T
+T
+T
+T
+F
+F
+F
+F
+T
+T
+F
+F
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+T
+T
+T
+T
+T
+T
+T
+F
+o
+
+p q r )
+p 
+( r
+
+q
+T
+T
+T
+T
+F
+F
+F
+F
+T
+T
+F
+F
+T
+T
+F
+F
+T
+F
+T
+F
+T
+F
+T
+F
+F
+F
+T
+T
+F
+T
+F
+T
+15. Let p, q and r be the propositions “You get an A on the final exam”, “You do every
+exercise in this book” and “You get an A in this class” respectively. Write the proposition
+“Getting an A on the final and doing every exercise in this book is sufficient for getting
+an A in this class” using p, q and r and logical connectives.
+ r
+(
+p 
+ )
+q
+o )
+r 
+
+( q
+p
+o r
+(
+p 
+ )
+q
+o r
+(
+p 
+ )
+q
+o )
+
+r 
+
+( q
+
+p
+
+16. Let p and q be the propositions “You get an A on the final exam” and “You get an A in
+this class” respectively. Write the proposition “To get an A in this class, it is necessary
+for you to get an A on the final” using p, q and logical connectives.
+ q
+p 
+o p
+q 
+o p
+q 
+o q
+p 
+
+
+o q
+p 
+1100
+01
+17. Evaluate the expression 0110
+10 ( 
+.
+) 0101
+11
+ 11 0000
+o 11 0100
+o 00 0110
+o 11 1111
+o 01 0101
+18. Find the implication that is false.
+ If 2 + 3 = 5, then pigs can fly.
+o If 2 + 3 = 6, then God exists.
+o If 2 + 3 = 4, then 3 + 3 = 5.
+o If pigs can fly, then 1 + 3 = 5.
+o If 2 + 3 = 5, then 1 + 3 = 4.
+19. Let p and q be the propositions “It is below freezing” and “It is snowing” respectively.
+Express the proposition )
+( q
+p 
+ as an English sentence.
+q
+)
+
+(
+p
+
+ It is either below freezing or it is snowing, but it is not snowing if it is below freezing.
+o It is below freezing or snowing, but it is not snowing only if it is below freezing.
+o It is either below freezing or snowing, and it is not below freezing if it is snowing.
+o It is below freezing but not snowing.
+o If it is below freezing, then it is not snowing.
+20. Let p and q be the propositions “You miss the final examination” and “You pass the
+course” respectively. Express the proposition q
+ as an English sentence.
+p 
+ If you don’t miss the final examination then you pass the course, and conversely.
+o That you don’t miss the final examination is necessary for passing the course.
+o Missing the final examination is sufficient for passing the course by you.
+o You don’t miss the final examination or you pass the course.
+o If you don’t pass the course, you miss the final examination.
+21. A compound proposition is a tautology if
+ it is always true, no matter what the truth values of the propositions that occur in it.
+o it is always false, no matter what the truth values of the propositions that occur in it.
+o it is always true whenever each of the propositions that occur in it is true.
+o it is only false when each of the propositions that occur in it is false.
+o it is always true whenever all the propositions that occur in it have the same truth values.
+22. Find the proposition that is a tautology.
+
+ )
+
+( q
+
+p 
+q
+)
+(
+
+p
+
+
+o )
+( p
+p 
+q
+)
+
+(
+
+q
+
+
+p 
+q
+)
+
+(
+( q
+o )
+p
+
+o )
+( p
+p 
+q
+)
+
+(
+
+q
+
+
+p 
+
+q
+
+o )
+)
+(
+( p
+q
+23. Which of the following logical equivalences is a distributive law?
+
+ )
+
+p 
+( r
+q
+
+r
+)
+(
+p
+
+q
+)
+
+(
+p
+o r
+p 
+(
+)
+
+(
+ )
+q
+
+r
+p
+
+q
+
+o p
+p 
+q
+
+q
+
+o )
+
+p 
+)
+(
+( r
+q
+
+r
+p
+
+q
+
+
+p 
+o p
+q
+q
+24. Find the proposition that is logically equivalent to q
+
+ .
+p 
+ )
+
+( q
+p 
+o )
+
+( q
+p 
+
+(
+( p
+o )
+
+p 
+q
+)
+q
+o )
+
+( q
+p 
+
+o q
+p 
+25. Which implication is logically equivalent to the implication s
+ ?
+r 
+
+ r
+s 
+ 
+
+s
+o r
+
+r
+
+o s
+o r
+s 
+
+s
+o r
+26. A proposition is a contingency if
+ it is neither a tautology nor a contradiction
+o it is both a tautology and a contradiction
+o it is not a contradiction
+o it is not a tautology
+o it is not logically equivalent to any tautology
+27. Find a compound proposition involving the propositions p, q and r that is true when p
+and q are false and r is true, but is false otherwise.
+ r
+
+
+
+p 
+q
+
+o r
+p 
+q
+o r
+(
+ )
+
+
+p 
+q
+o r
+(
+p 
+ )
+q
+
+o r
+(
+p 
+ )
+q
+28. Find a compound proposition involving the propositions p, q and r that is false when
+p is false and q and r are true, but is true otherwise.
+ r
+
+
+q
+
+p 
+o r
+
+
+p 
+q
+
+o r
+
+q
+
+p 
+
+o )
+
+p 
+( r
+q
+o r
+
+
+p 
+q
+29. Find a compound proposition involving the propositions p, q and r that is true when p
+and q are true and r is false, but is false otherwise.
+ r
+
+q
+
+p 
+)
+(
+( r
+o )
+
+
+r
+
+
+p 
+q
+o r
+(
+p 
+ )
+q
+
+o )
+r 
+
+
+( q
+p
+o r
+(
+p 
+ )
+q
+q/2категория
+30. Let P(x) be the statement “x spends less than three hours every weekday in class”,
+where the universe of discourse for x is the set of students. Express the proposition
+“ )
+ ” in English.
+x
+P
+(x
+ There is a student who spends no less than three hours every weekday in class.
+o Every student doesn’t spend more than three hours every weekday in class.
+o There is a student who doesn’t spend more than three hours every weekday in class.
+o There is a student who spends less than two hours every weekday in class.
+o Every student spends no more than six hours every weekday in class.
+31. Let P(x) be the statement “x can speak Kazakh” and let Q(x) be the statement “x
+knows the computer language Delphi”, where the universe of discourse for x is the set of
+all students at your university. Express the sentence “There is a student at your
+university who can speak Kazakh but who doesn’t know Delphi” in terms of P(x), Q(x),
+quantifiers and logical connectives.
+
+P
+ ))
+x 
+( x
+(
+x
+)
+
+Q
+(
+
+P
+o ))
+x 
+( x
+(
+x
+)
+
+Q
+(
+
+P
+
+o ))
+x 
+(
+)
+(
+( x
+x
+Q
+
+x 
+o ))
+( x
+Q
+(
+x
+)
+P
+(
+
+o ))
+x 
+( x
+
+P
+(
+x
+)
+Q
+(
+32. Let S(x, y) be the statement “x + 3y = 3x – y”, where the universe of discourse for
+both variables is the set of integers. Which of the following statements is true?
+
+ )
+y
+x
+S
+( y
+x
+,
+
+
+o )
+x 
+y
+S
+( y
+x
+,
+
+x
+o )
+y
+S
+( y
+x
+,
+
+x
+o )
+y
+S
+( y
+x
+,
+
+o )
+y
+x
+S
+( y
+x
+,
+33. Rewrite the statement )
+ y
+x
+P
+( y
+x
+,
+so that negations appear only within predicates
+(that is, so that no negation is outside a quantifier or an expression involving logical
+connectives).
+
+
+P
+ )
+x
+y 
+( y
+x
+,
+
+o )
+y
+x
+P
+( y
+x
+,
+
+
+P
+o )
+x
+y 
+( y
+x
+,
+
+
+o )
+x 
+y
+P
+( y
+x
+,
+
+x
+o )
+y
+P
+( y
+x
+,
+34. Rewrite the statement ))
+ P
+(
+)
+
+y 
+S
+(
+( y
+y
+
+x
+x
+,
+so that negations appear only within
+predicates (that is, so that no negation is outside a quantifier or an expression involving
+logical connectives).
+
+ ))
+y 
+( y
+
+P
+(
+y
+)
+
+x
+S
+(
+x
+,
+
+o ))
+y 
+( y
+
+P
+(
+y
+)
+
+
+x
+S
+(
+x
+,
+
+o ))
+y 
+( y
+
+P
+(
+y
+)
+
+x
+S
+(
+x
+,
+
+S
+
+P
+(
+o ))
+x 
+(
+)
+( y
+x
+,
+y
+
+y
+
+P
+
+S
+o ))
+(
+)
+y 
+(
+( y
+y
+
+x
+x
+,
+35. Rewrite the statement ))
+ 
+xP
+(
+)
+y 
+R
+(
+( y
+x
+,
+y
+
+x
+x
+,
+so that negations appear only within
+predicates (that is, so that no negation is outside a quantifier or an expression involving
+logical connectives).
+
+ ))
+y 
+( y
+x
+
+P
+(
+x
+,
+y
+)
+
+
+x
+R
+(
+x
+,
+
+
+o ))
+y 
+( y
+x
+
+P
+(
+x
+,
+y
+)
+
+xR
+(
+x
+,
+
+
+o ))
+x 
+( y
+y
+
+P
+(
+x
+,
+y
+)
+
+
+y
+R
+(
+x
+,
+
+
+o ))
+y 
+( y
+x
+
+P
+(
+x
+,
+y
+)
+
+x
+R
+(
+x
+,
+
+
+o ))
+y 
+( y
+x
+
+P
+(
+x
+,
+y
+)
+
+
+x
+R
+(
+x
+,
+
+
+P
+
+
+S
+36. Rewrite the statement ))
+ so that negations appear
+y 
+( z
+x
+z
+
+(
+x
+,
+y
+z
+,
+)
+
+x
+z
+(
+x
+,
+y
+,
+only within predicates (that is, so that no negation is outside a quantifier or an
+expression involving logical connectives).
+
+
+
+zP
+
+S
+ ))
+y 
+( z
+x
+(
+x
+,
+y
+z
+,
+)
+
+x
+z
+(
+x
+,
+y
+,
+
+
+
+P
+
+
+S
+o ))
+y 
+( z
+x
+z
+
+(
+x
+,
+y
+z
+,
+)
+
+x
+z
+(
+x
+,
+y
+,
+
+
+
+zP
+
+S
+o ))
+(
+y 
+( z
+x
+x
+,
+y
+z
+,
+)
+
+x
+z
+(
+x
+,
+y
+,
+
+
+
+P
+
+x 
+S
+o ))
+( z
+y
+z
+
+(
+x
+,
+y
+z
+,
+)
+
+y
+z
+(
+x
+,
+y
+,
+
+
+
+P
+x 
+S
+o ))
+z
+(
+)
+(
+( z
+y
+
+x
+,
+y
+z
+
+,
+y
+x
+,
+y
+,
+37. Which of the following statements is true if the universe of discourse for all variables
+is the set of all integers?
+
+ m
+ ) 1
+n
+m
+( 2
+n
+
+1
+
+
+ n
+o ) 1
+n
+( 2 
+ n
+o ) 8
+n
+( 2
+
+
+
+n 
+o )
+m
+( 3
+n
+m
+
+
+2
+n 
+o )
+m
+( 2
+n
+
+m
+
+n
+m
+38. Which of the following statements is true if the universe of discourse of each variable
+is the set of real numbers?
+ x
+ ) 8
+x
+( 2
+
+
+
+o )
+x 
+y
+( 2
+x
+y
+o ) 4
+ y
+x
+
+y
+(
+x
+
+
+
+
+
+x 
+( x
+o )
+y
+x
+y
+y
+
+
+o )
+x
+y
+( 3 y
+x
+q/3категория
+39. Find the power set of {1, 2}.
+ {, {1}, {2}, {1, 2}}
+o {, {1, 2}}
+o {{0}, {1}, {1, 2}}
+o {{0}, {1}}
+o {, {2}}
+40. List the members of the set {x | x is a negative integer greater than (– 8)}.
+ {– 7, – 6, – 5, – 4, – 3, – 2, –1}
+o {– 8, –7, – 6, – 5, – 4, – 3, – 2, –1}
+o {–9, –10, –11, …}
+o {0, 1, 2, 3, 4, 5, 6, 7}
+o {9, 10, 11, 12, …}
+2
+41. List the members of the set {x | x is an integer such that 5
+x }.
+
+ 
+o }
+{
+5
+;
+5
+o {25}
+o {–2, –1, 0, 1, 2}
+o {– 5; 5}
+42. Find the power set of {0, 1}.
+ {, {0}, {1}, {0, 1}}
+o {, {0, 1}}
+o {{0}, {1}, {0, 1}}
+o {{0}, {1}}
+o {, {1}}
+43. Let A = {1, 2, 3, 4, 5}, B = {2, 4, 6, 8} and C = {2, 4}. Which of the following statements
+is true?
+ C
+A 
+
+B
+o B
+A 
+
+C
+A 
+o C
+
+B
+o A
+B 
+
+C
+A
+B 
+o C
+
+A 
+C
+44. Let A = {a, b, c, d, e, f}, B = {b, d, f, g, h, s} and C = {m, n, o, p, r, d, f}. Find B
+(.
+ )
+ {b, d, f, g, h, s}
+o {b, m, n, o, p, r, d , f}
+o {a, b, c, d, e, f}
+o {m, n, o, p, r, d, f}
+o {b, d, e, f, g, h, r}
+45. Let A = {0, 1, 2}, B = {y, z} and C = {b, c}. Find C 
+
+B
+. C
+ {(b, y, b), (b, y, c), (b, z, b), (b, z, c), (c, y, b), (c, y, c), (c, z, b), (c, z, c)}
+o {(0, y, b), (1, y, b), (2, y, b), (0, z, b), (1, z, c), (2, z, c), (0, y, c), (1, y, c), (2, y, c)}
+o {(b, y),(b, z), (c, y), (c, z)}
+o {(b, 0), (b, 1), (b, 2), (c, 0), (c, 1), (c, 2), (0, y), (1, y), (2, y)}
+o {(b, y, c), (c, y, b), (b, z, c), (c, z, b)}
+46. Let U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9} be the universal set, and let A = {0, 1, 3, 4, 7, 8}, B =
+{0, 2, 4, 6, 7, 8, 9}. Find B
+A  .
+ {5}
+o 
+o {0, 1, 2, 4, 6, 7, 8, 9}
+o {0, 1, 2, 3, 4, 6, 7, 8, 9}
+o {0, 4, 7, 8}
+47. Let U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9} be the universal set, and let A = {0, 1, 3, 4, 7, 8}, B =
+B
+{0, 2, 4, 6, 7, 8, 9}. Find A
+.
+ {0, 1, 3, 4, 5, 7, 8}
+o {2, 6, 9}
+o {1, 3}
+o {5}
+o 
+48. A set A is a proper subset of a set B if
+ every element of A is also an element of B and A  B
+o every element of A is also an element of B
+o there is an element of B that is not an element of A
+o there is an element of A that is also an element of B
+o 
+B and 
+ A
+
+A
+ B
+
+49. Let A be a set. The power set of A is
+ the set of all subsets of A
+o the set of all proper subsets of A
+o {, A}
+o the set of all finite subsets of A
+o the set of all proper subsets of A and the empty set.
+50. Let A and B be sets. The Cartesian product of A and B is
+ the set of all ordered pairs (a, b) where A
+b
+a  and B
+o the set of all ordered pairs (b, a) where A
+b
+a  and B
+o the set of all two-element sets {a, b} where A
+b
+a  and B
+b
+)
+|
+(
+A
+b
+B
+)
+(
+A
+b
+o )}
+{( B
+
+
+a 
+a
+,
+
+
+a
+
+
+o the set of all ordered n-tuples )
+( 2
+a where B
+a
+a
+A
+,
+,...,
+1 n
+ai 
+ for all i = 1, 2, …, n.
+51. Let U = {1, 2, 3, 4, 5, 6, 7, 8} be the universal set, and A = {1, 3, 4, 5, 8}, B = {2, 4, 5, 7,
+8}. Find the complement of A.
+ {2, 6, 7}
+o {1, 3, 6}
+o {4, 5, 8}
+o {6}
+o {1, 2, 3, 4, 5, 7, 8}
+52. Let U = {1, 2, 3, 4, 5, 6, 7, 8} be the universal set, and A = {1, 3, 4, 5, 8}, B = {2, 4, 5, 7,
+8}. Find the complement of B.
+ {1, 3, 6}
+o {2, 6, 7}
+o {4, 5, 8}
+o {6}
+o {1, 2, 3, 4, 5, 7, 8}
+53. Let } 2
+Ai  i
+, 4
+, 5
+, 3 { 
+...,
+for i = 1, 2, 3, … Find 5
+i A
+i
+1
+ {3, 4, 5, 6, 7}
+o {3}
+o {5, 6, 7}
+o {1, 2, 3, 4, 5}
+o {3, 4, 5}
+Ai i
+ i
+
+, 3
+i
+
+, 4
+54. Let ...}
+{ 
+, 5
+for i = 1, 2, 3, … Find 4
+i A
+i
+1
+ {7, 8, 9,…}
+o {4, 5, 6, …}
+o {1, 2, 3, …}
+o {4, 5, 6, 7}
+o {1, 2, 3, 4}
+55. Let f be a function from A to B. Then the codomain of f is
+ the set B
+o the set A
+o { B
+b | there is an element A
+a  such that f(a) = b}
+o { A
+b a  | there is an element B
+such that f(a) = b}
+o { B
+b | there is no A
+a  with f(a) = b}
+56. What is the Cartesian product of A = {a, b} and B = {1, 2}?
+ {(a, 1), (b, 1), (a, 2), (b, 2)}
+o {(1, a), (1, b), (2, a), (b, b)}
+o {(1, 1), (2, 2), (a, a), (b, b)}
+o {(1, a), (a, a), (1, b), (b, b)}
+o {(1, 1), (a, a), (2, a), (1, b)}
+57. Let A = {a, b, c, d, e, g, h} and B = {0, 1, 3, 4, 5} with f(a) = 3, f(b) = 2, f(c) = 4, f(d) = 0,
+f(e) = 5, f(g) = 1 and f(h) = 3. Find the image of S = {c, d, e, g}.
+ {0, 1, 4, 5}
+o {4, 0, 3, 1}
+o {0, 1, 2, 3, 4, 5}
+o {4, 0, 5, 1, 3}
+o {1, 2, 3, 4}
+58. Which of the following is true for all sets S and T?
+ S
+T
+T
+    
+S  
+
+o  T
+
+S 
+o 
+S 
+T
+T
+o 
+S  
+T
+o 
+S  
+59. Which of the following is true for all sets S and T?
+ T
+T
+S 
+
+S
+T
+o T
+S 
+
+S
+T
+o T
+S 
+
+S
+T
+T
+S
+
+S
+S 
+o     T
+
+
+T
+o T
+S 
+
+S
+60. Let  
+S ,
+ . Which of the following is not an element of )
+ a
+a
+P (the power set of S)?
+(S
+ { , {a}}
+o 
+o {a}
+o { a ,{a}}
+o {{a}}
+61. Let   1
+S . Which of the following is an element of power set of S)?
+P
+P (the power set of the
+(
+( S
+))
+ { , {1}}
+o {, 1}
+o {1}
+o {{}, 1}
+o {1, {1}}
+62. What is the Cartesian product of A = {1, 2} and B = {a, b}?
+ {(1, a), (1, b), (2, a), (2, b)}
+o {(1, a), (1, b), (2, a), (b, b)}
+o {(1, 1), (2, 2), (a, a), (b, b)}
+o {(1, a), (a, a), (1, b), (b, b)}
+o {(1, 1), (a, a), (2, a), (1, b)}
+63. Let U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9} be the universal set, and let A = {0, 1, 3, 4, 7, 8}, B =
+{0, 2, 4, 6, 7, 8, 9}. Find B
+A  .
+ {1, 2, 3, 5, 6, 9}
+o 
+o {0, 1, 2, 4, 6, 7, 8, 9}
+o {0, 4, 7, 8}
+o {4, 7, 8}
+64. Let U = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9} be the universal set, and let A = {0, 1, 3, 4, 7, 8}, B =
+{0, 2, 4, 6, 7, 8, 9}. Find B
+A .
+ {5}
+o 
+o {0, 1, 2, 4, 6, 7, 8, 9}
+o {0, 4, 7, 8}
+o {1, 2, 3, 5, 6, 9}
+q/4категория
+65. A function B
+A
+f 
+: is said to be injective (one-to-one) …
+ iff f(x) = f(y) implies that x = y for all x and y in the domain of f.
+o iff for every element B
+b there is an element A
+a  with f(a) = b.
+o if f(x) < f(y) whenever x < y and x and y are in the domain of f.
+o if f(x) > f(y) whenever x < y and x and y are in the domain of f.
+o iff for every element A
+a  there is an element B
+b with f(a) = b.
+66. A function B
+A
+f 
+: is said to be surjective (onto) …
+ iff for every element B
+b there is an element A
+a  with f(a) = b.
+o iff for every element A
+a  there is an element B
+b with f(a) = b.
+o if f(x) < f(y) whenever x < y and x and y are in the domain of f.
+o if f(x) > f(y) whenever x < y and x and y are in the domain of f.
+o iff f(x) = f(y) implies that x = y for all x and y in the domain of f.
+67. The function f is a one-to-one correspondence, or a bijection, if
+ it is both one-to-one and onto.
+o it is either one-to-one or onto.
+o it is one-to-one but not onto.
+o it is onto but not one-to-one.
+o the codomain and the range of f coincide.
+68. Let f and g be the functions from the set of integers to the set of integers defined by
+f(x) = 3x – 4 and g(x) = 4x – 3. Find the composition of g and f.
+ 12x – 19
+o 12x – 13
+o 7x – 7
+o 7x – 12
+o x + 1
+69. Find   01 , 1.
+ 2
+o 1
+o 1,01
+o 0
+o 1, 02
+70. Find  
+34 , 2
+.
+ – 2
+o – 3
+o –2,34
+o 0
+o – 1
+/
+3
+1
+/
+3
+71. Find    
+1 
+1
+/
+  3
+.
+ 2
+o 1
+o 1/3
+o 2/3
+o 0
+72. Which of the following functions from {a, b, c, d} to itself is one-to-one?
+ f(a) = d, f(b) = c, f(c) = b, f(d) = a
+o f(a) = c, f(b) = d, f(c) = b, f(d) = b
+o f(a) = a, f(b) = b, f(c) = d, f(d) = d
+o f(a) = a, f(b) = a, f(c) = a, f(d) = a
+o f(a) = d, f(b) = a, f(c) = a, f(d) = d
+73. Which of the following functions from R to R is a bijection?
+ 5
+f
+)
+
+6
+( 
+x
+ x
+o 9
+f
+( 2 
+x
+)
+
+4
+ x
+o
+2
+x
+f
+x
+)
+
+( 4
+x
+1
+
+
+1
+o
+o
+1
+f
+x
+)
+
+( 6 
+x
+1
+x
+
+5
+f
+(
+x
+)
+
+x
+
+10
+74. Let S = {–3, 0, 3, 7}. Find f(S) if 
+2
+
+2
+
+( x
+)
+
+f.
+x
+ 
+3
+ 
+ {1, 4, 17}
+2
+2
+3
+   17
+o   
+;
+;
+3
+3
+o {0, 3, 17}
+o {–2, 0, 3, 16}
+o {–3, 0, 3, 7}
+75. Find g
+f if 2
+( 3 
+f and 3
+x
+)
+ x
+g are functions from R to R.
+(
+x
+)
+ x
+5
+ 2
+5 ( 3 
+x
+
+) 3
+5 3 
+o 7
+x
+3
+o 1
+x
+ x
+5
+
+o ) 3
+( 3
+x
+)( 2
+ x
+5
+
+3
+x
+
+2
+o
+5
+x
+
+3
+/
+2
+3
+4
+/
+3
+76. Find  
+ 
+.
+ 0
+o – 2/3
+o 2
+o 1
+o 3
+/
+2
+3
+3
+/
+4
+77. Find  
+ 
+.
+o – 2/3
+o 4
+o 1
+ 2
+o 3
+Z
+78. Suppose R
+f 
+: has the rule f(n)=2n-3. Which of the following is the range of f?
+ the set of odd integers
+o the set of even integers
+o the real numbers
+o the set of natural numbers {0, 1, 2, 3, …}
+o the set of integers {…, -2, -1, 0, 1, 2, 3, …}
+79. Suppose f and g are functions from R  R with    5
+f .
+g
+
+( x
+
+ 
+5
+2
+
+x
+)
+
+ 
+2
+ 
+( x
+x
+)
+
+f and  
+g . Find
+ 
+3
+ -1
+o 1
+o 0
+o 2
+o 5
+80. Suppose f and g are functions from R  R with Find    5
+f .
+g
+ 
+2
+( x
+3
+
+ 
+5
+2
+
+x
+)
+
+ 
+2
+ 
+( x
+x
+)
+
+f and  
+g.
+ 
+3
+ 0
+o 1
+o -1
+o 3
+o 5
+N
+81. Suppose N
+f 
+
+f . Which of the following statements
+(
+x
+)
+  
+2
+n
+n
+
+8
+: has the rule  
+,
+n
+
+, 1
+n
+
+5
+is true?
+ f is not a function because f(6) is equal to both 36 and 7
+o f is a function
+o f is not a function because f(3)=9 and f(8)=9
+o none of this
+o f is not a function because there is no natural number n such that f(n)=2
+82. Find functions R
+f 
+: and R
+R
+R
+g 
+: such that g
+f has the rule
+    2 . 8
+f .
+g
+x
+ x
+2 
+( 2
+  x
+x
+)
+ )
+x
+
+, 2 . 8
+g
+f
+(
+x
+o   2
+g
+( x
+x
+)
+
+x
+
+, 2 . 8
+f
+(
+x
+)
+o   8
+g
+( 2 
+x
+)
+x
+ x
+,
+f
+(
+x
+)
+
+o   2 . 8
+g
+( 
+x
+)
+ x
+x
+,
+f
+(
+x
+)
+
+o   2 . 7
+g
+( 2 
+x
+)
+ x
+x
+,
+f
+(
+x
+)
+
+A
+83. Let B
+f 
+: where   9
+B and f is defined by the rule 2
+, 0
+, 1
+, 4
+f . For which set
+( x
+x
+)
+A is f a correctly defined function from A to B and one-to-one?
+   3
+, 1, 2
+o   2
+
+, 2
+, 1
+, 0
+o   3
+
+, 3
+, 1
+, 0
+, 2
+o   9
+, 1 , 0
+, 4
+o   2
+, 1
+, 1 , 0
+ 
+2
+A
+84. Suppose the function   3
+: 
+, 1
+, 2
+( n
+1
+
+f is defined by the rule  
+f . On which
+n
+)
+
+ 
+3
+domain is the function 1-1 and onto?
+   6
+, 3
+, 4
+o   5
+, 2
+, 3
+, 4
+o   5
+, 3
+o   4
+, 2
+, 3
+o   3
+, 2
+ 
+2
+A
+85. Suppose the function Z
+f 
+( n
+1
+
+: is defined by the rule  
+f . On which
+n
+)
+
+ 
+3
+domain A is the function 1-1?
+   4
+, 1
+, 1
+, 3
+o   3
+, 1
+, 0
+, 1
+o   1 , 0
+
+, 2
+, 1
+o   4
+, 1
+, 2
+, 3
+o   4
+, 2
+, 3
+86. Find   99 , 1 .
+ 1
+o 2
+o 1,98
+o 0
+o 1,99
+87. Find functions R
+f 
+: and R
+R
+R
+g 
+: such that g
+f has the rule
+    1 . 7
+f .
+g
+x
+ x
+2 
+( 2
+  x
+x
+)
+
+, 1 . 7
+ )
+x
+g
+f
+(
+x
+o   2
+g
+( x
+x
+)
+
+x
+
+, 1 . 7
+f
+(
+x
+)
+o   1 . 7
+g
+( 2 
+x
+)
+ x
+x
+,
+f
+(
+x
+)
+
+o   1 . 7
+g
+)
+( 
+x
+x
+ x
+,
+f
+(
+x
+)
+
+o   1 . 7
+g( 2 
+x
+)
+ x
+x
+,
+f
+(
+x
+)
+
+ 
+3
+R
+88. Suppose R
+f 
+( x
+1
+
+: where  
+f . Find   1
+x
+)
+
+ 
+: 
+x.
+f
+(
+x
+)
+2
+
+5
+
+  
+ 
+, 1
+3
+o  
+, 0
+2
+2
+ 3
+
+o  
+ 
+,
+3
+o none of these
+o   1
+, 0
+ 
+3
+R
+89. Suppose R
+f 
+( x
+1
+
+: where  
+f . Find   2
+x
+)
+
+ 
+: 
+x.
+f
+(
+x
+)
+2
+
+5
+7
+
+  
+ 
+,
+3
+3
+o   3
+, 0
+2
+ 3
+
+o  
+ 
+,
+3
+o none of these
+
+5
+7
+
+ 
+,
+o  
+3
+3
+90. Suppose R
+f 
+: has the rule
+A
+1
+f
+( . Which of the following could be the
+x
+)
+
+3
+x
+
+x
+domain A.
+R
+   1
+
+, 1
+, 0
+R
+o   1 , 0
+R
+o   1
+
+, 1
+o none of these
+o R
+91. Which is a correct statement about the function x
+( f 2
+x
+)
+the set of integers?
+from the set of integers Z to
+ f is one-to-one, but not onto
+o f is onto, but not one-to-one
+o f is one-to-one and onto
+o f is neither one-to-one nor onto
+o f is one-to-one correspondence
+92. Which statement about the function set of integers is correct?
+f from the set of real numbers to the
+( 
+x
+)
+ x
+  1
+ f is onto, but not one-to-one
+o f is one-to-one, but not onto
+o f is one-to-one and onto
+o f is neither one-to-one nor onto
+o f is one-to-one correspondence
+93. The function   B
+, 1 , 0
+, 2
+,... 3
+f 
+( n
+ 
+1
+
+: where  
+f is an onto function if the codomain
+n
+)
+
+ 
+2
+B is which of the following?
+  ,... 3
+, 1
+, 1 , 0
+, 2
+o   3
+, 1 , 0
+, 2
+o R (the set of all real numbers)
+
+o   
+  
+1
+1
+3
+5
+7
+,
+,
+,
+,
+...
+2
+2
+2
+2
+2
+o  ,... 3
+, 1 , 0
+, 2
+ 
+2
+A
+94. Suppose the function   3
+: 
+, 1 , 0
+, 2
+( n
+1
+
+f is defined by the rule  
+f . On which
+n
+)
+
+ 
+3
+domain A is the function onto the codomain , 1 , 0 ?
+  3
+, 2
+   6
+, 1
+, 3
+, 4
+o   5
+, 1
+, 3
+o   5
+, 1
+, 2
+, 3
+o   6
+, 2
+, 3
+, 5
+o   6
+, 2
+, 3
+, 4
+, 5
+95. The function R
+A
+f 
+: where  
+f ( x
+x
+)
+ 2
+these sets?
+is one-to-one if the domain A is which of
+  
+,
+o   2
+x
+R
+
+2
+
+ x
+: 
+o Z (the set of all integers  ,... 3
+...,
+ )
+, 3
+
+, 2
+, 1
+, 0
+, 1
+, 2
+  
+1
+3
+ 2
+o   
+,
+,
+2
+4
+o   5
+, 5
+q/5категория
+96. There are 20 mathematics majors and 40 computer science majors at a college. How
+many ways are there to pick one representative who is either a mathematics major or a
+computer science major?
+ 60
+o 800
+o 20
+o 40
+o 80
+97. There are 20 mathematics majors and 40 computer science majors at a college. How
+many ways are there to pick two representatives, so that one is a mathematics major and
+another is a computer science major?
+ 800
+o 60
+o 20
+o 40
+o 80
+98. How many strings of five English letters that are start with B are there if letters can be
+repeated?
+ 4
+26
+o 22
+25
+
+24
+
+23
+o 23
+26
+
+25
+
+24
+o 5
+26
+o 22
+26
+
+25
+
+24
+
+23
+99. If set A has 3 elements then number of elements in A
+A 
+ is?
+A
+ 27
+o 3
+o 9
+o 12
+o 6
+ 15
+o 360
+o 60
+o 30
+o 120
+101. Find C(8, 5).
+ 56
+o 70
+o 35
+o 5
+o 840
+100. Let A = {a, b, c, d, e, f}. How many 4-combinations of A are there?
+102. Find the coefficient of 5
+x in 12
+7 y
+( y
+x  .)
+ 792
+o 21
+o 72
+o 99
+o 664
+4
+103. Find the coefficient of 2
+x in 6
+y
+3 ( y
+x
+5
+)
+.
+ 3
+3
+5 5
+o 15
+o
+3
+5
+3
+o
+3
+4 5
+2
+o –15
+104. How many different strings can be made from the letters in STATISTICS, using all
+the letters?
+ 50400
+o 100800
+o 10!
+o C(10, 3)
+o 720
+105. A croissant shop has plain croissants, cherry croissants, chocolate croissants,
+almond croissants, apple croissants and broccoli croissants. How many ways are there
+to choose a dozen croissants?
+ 6188
+o 12376
+o 924
+o 210
+o 3003
+106. How many ways are there to choose eight coins from a piggy bank containing 100
+identical pennies and 80 identical nickels?
+ 9
+o C(100, 8) + C(80, 8)
+o P(100, 80)
+o 36
+100
+!
+o
+80
+!
+
+8
+!
+107. Find P(8, 5).
+ 6720
+o 336
+o 56
+o 28
+o 72
+108. Find C(8, 4).
+ 70
+o 1680
+o 35
+o 140
+o 840
+109. A dormitory has students – 12 sophomores, 8 juniors, and 20 seniors. Which of the
+following is equal to the number of ways to form a committee of five students from the
+same class?
+ C(12, 5)+ C(8, 5)+ C(20, 5)
+o C(40, 5)/3
+o P(12, 5)+P(8, 5)+P(20, 5)
+o 5)
+P(12,
+5)
+
+P(8,
+5)
+P(20,
+o 5)
+C(12,
+5)
+
+C(8,
+5)
+C(20,
+110. A class consists of 12 women and 10 men. How many ways are there to form a
+committee of size six if the committee has more women than men?
+4)
+
+C(10,
+2)
++
+C(12,
+5)
+
+C(10,
+1)
++
+C(12,
+6)
+C(12,
+C(10,
+ 0)
+o 2)
+4)
+C(12,
+(10,
+o 0)
+C(12,
+4)
+
+(10,
+2)
+
+C(12,
+5)
+
+(10,
+1)
+
+C(12,
+6)
+(10,
+
+
+o 2)]
+6)
+-
+[C(10,
+C(22,
+6)
+(12,
+0)
+-
+C(10,
+5)
+(12,
+1)
+-
+C(10,
+4)
+(12,
+o 2)
+4)
+C(12, 
+(10,
+111. How many different license plates are available if the license plate pattern consist of
+three letters that cannot be repeated followed by three digits that can be repeated
+(Assume that all letters are uppercase and the digits are 0, 1, …, 9.)?
+ 3
+26
+
+25
+
+24
+10
+o
+3)
+C(26,
+3
+10
+o
+26
+3 10
+3
+o 3)
+C(26,
+3)
+C(10,
+o 1
+26
+
+25
+
+24
+
+10
+
+1
+112. A class consists of 12 women and 10 men. How many ways are there to form a
+committee of size six if the committee has equal numbers of women and men?
+C(12,
+3)
+ 3)
+C(10,
+o C(12, 3)+(10, 3)
+o C(22, 6)-(12, 6)-C(10, 6)
+o C(22, 6)
+o C(22, 3)
+q/6категория
+If you were to use a Caeser cipher with a key of 3 shifts, how would you encrypt the
+113. word: “CIPHER”?
+ FLSKHU
+o FMKSHU
+o EKRJGT
+o BLOGDQ
+o DJQIFS
+114.
+“HELLO” has been encrypted with Caesar cipher to “KHOOR”. The key used was?
+ 3
+o 2
+o 1
+o 4
+o 5
+115. What word encrypted using a Caesar Cypher and the key 3 would be: “WRGDB”?
+ TODAY
+o MAKER
+o CODED
+o LESSON
+o TERMS
+116. What will be the plain text corresponding to cipher text “PROTO” if Vigenere cipher
+is used with keyword as “HELLO”.
+ INDIA
+o WORLD
+o AMERICA
+o TABLE
+o ITEMS
+117. What will be the ciphered text if the string “INDIA” is given as input to the code of
+Vigenere cipher with keyword as “HELLO”.
+ PROTO
+o PARTO
+o RAPYO
+o RAPTO
+o TOPRO
+118. The quotient and remainder when -1 is divided by 3 is?
+ -1 and 2
+o 1 and 2
+o -1 and -2
+o -1 and 1
+o 2 and 1
+119. Which positive integer less than 21 are relatively prime to 21?
+ 19
+o 18
+o 21
+o 24
+o 22
+120. What is the quotient q and remainder r when -11 divided by 3?
+ q=-4 and r=1
+o q=1 and r=4
+o q=11 and r=0
+o q=-3 and r=4
+o q=1 and r=-3
+121. What is the quotient q and remainder r when 547 divided by 4?
+ q=136 and r=3
+o q=3 and r=136
+o q=136 and r=0
+o q=3 and r=130
+o q=136 and r=-3
+122. What is the quotient q and remainder r when -111 divided by 11?
+ q=-11 and r=10
+o q=11 and r=10
+o q=111 and r=0
+o q=-10 and r=11
+o q=16 and r=-3
+q/7категория
+123. Represent the relation R = {(1, 1), (1, 2), (2, 1), (3, 2)} on {1, 2, 3} with a matrix (with
+the elements of this set listed in increasing order).
+
+
+1
+  
+1
+
+0
+1
+0
+1
+0
+
+0
+0
+  
+
+o
+
+1
+  
+1
+
+0
+1
+1
+0
+0
+
+1
+1
+  
+
+o
+o
+o
+
+0
+  
+1
+
+1
+
+  
+
+1
+0
+1
+
+1
+  
+1
+
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+
+0
+0
+  
+
+1
+0
+1
+
+  
+
+1
+
+1
+0
+  
+
+124. List the ordered pairs in the relation R from A = {0, 1, 2, 3, 4} to B = {0, 1, 2, 3} where
+(a, b)  R if and only if a + b = 3.
+ {(0, 3), (1, 2), (2, 1), (3, 0)}
+o {(0, 3), (1, 2), (2, 1), (3, 0), (4, –1)}
+o {(0, 0), (0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)}
+o {(0, 0), (1, 1), (2, 2), (3, 3)}
+o {(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3), (3, 4)}
+125. Let R1 = {(1, 1), (1, 2), (2, 2), (2, 3), (3, 3), (3, 4)} and R2 = {(1, 2), (2, 1), (2, 4), (3, 1), (3,
+2), (3, 4)} be relations from {1, 2, 3} to {1, 2, 3, 4}. Find 2
+R .
+1 R
+ {(1, 2), (3, 4)}
+o {(1, 1), (1, 2), (2, 1), (2, 2), (2, 3), (2, 4), (3, 1), (3, 2), (3, 3), (3, 4)}
+o {(1, 1), (2, 2), (2, 3), (3, 3)}
+o {(1, 1), (2, 1), (2, 4), (3, 1), (3, 2)}
+o {(1, 1), (1, 2), (2, 2), (3, 3), (3, 4)}
+126. Let R = {(a, b), (b, c), (c, a), (d, b)} and S = {(a, a), (b, b), (c, c), (d, a)} be relations on A
+= {a, b, c, d}. Find R
+S  .
+ {(a, b), (b, c), (c, a), (d, b)}
+o {(a, a), (b, b), (c, c), (d, a)}
+o {(a, a), (b, a), (c, a), (c, b), (d, b), (d, c)}
+o {(a, a), (a, b), (b, b), (b, c), (c, a), (c, c), (d, a), (d, b)}
+o {(b, a), (c, b), (a, c), (b, d), (a, d)}
+127. Represent the relation R = {(1, 1), (1, 2), (2, 1), (2, 3), (3, 2)} on {1, 2, 3} with a matrix
+(with the elements of this set listed in increasing order).
+
+o
+
+1
+  
+1
+
+0
+
+  
+1
+1
+
+0
+1
+0
+1
+1
+1
+0
+0
+
+1
+0
+  
+
+0
+
+1
+1
+  
+
+o
+
+0
+  
+1
+
+1
+1
+0
+1
+1
+
+0
+0
+  
+
+o
+
+  
+
+1
+0
+1
+0
+0
+0
+1
+0
+1
+
+  
+
+o
+
+1
+  
+1
+
+0
+1
+0
+0
+1
+
+1
+0
+  
+
+128. List the ordered pairs in the relation on {1, 2, 3} corresponding to the matrix
+
+  
+
+1
+0
+0
+1
+1
+1
+1
+
+1
+0
+  
+
+(where the rows and columns correspond to the integers listed in increasing
+order).
+ {(1, 1), (1, 3), (2, 2), (2, 3), (3, 1), (3, 2)}
+o {(1, 2), (1, 3), (2, 1), (2, 3), (3, 2), (3, 3)}
+o {(1, 2), (2, 1), (3, 3)}
+o {(1, 1), (2, 2), (3, 1), (3, 2), (1, 2), (1, 3)}
+o {(1, 1), (1, 3), (3, 1), (3, 3)}
+129. List the triples in the relation {(a, b, c) | a, b and c are positive integers with 1 < a + b
+< c ≤ 4}
+ {(1, 1, 3), (1, 1, 4), (1, 2, 4), (2, 1, 4)}
+o {(0, 2, 3), (0, 2, 4), (2, 0, 3), (2, 0 , 4), (1, 1, 3), (1, 1, 4), (0, 3, 4), (3, 0, 4)}
+o {(1, 2, 4), (0, 1, 3), (0, 2, 4), (0, 3, 4)}
+o {(0, 1, 2), (0,1, 3), (0, 1, 4), (0, 2, 3), (0, 2, 4), (1, 0, 2), (1, 0, 3), (1, 0, 4), (2, 0, 3), (2, 0,
+4)}
+o {(1, 2, 1), (0, 1, 3), (1, 1, 2), (2, 1, 1), (1, 0, 3), (3, 0, 1)}
+130. A relation S on a set B is called antisymmetric if
+ both (a, b) and (b, a) belong to S only if a = b for all a, b B
+o (b, c)S whenever (c, bS for all b, c  B
+o (b, b)S for every element bB
+o whenever (b, c) S and (c, a) S then (b, a) S for all a, b, c  B
+o it is not symmetric
+131. Let R = {(1, 1), (2, 1), (2, 3), (3, 1), (4, 2), (4, 3)}. Find 2
+R .
+ {(1, 1), (2, 1), (3, 1), (4, 1), (4, 3)}
+o {(1, 1), (2, 1), (3, 1), (4, 1)}
+o {(2, 1), (4, 1), (3, 1), (2, 3)}
+o {(1, 1), (2, 1), (2, 3), (3, 1), (4, 2), (4, 3)}
+o {(1, 1), (1, 2), (1, 3), (2, 4), (3, 2), (3, 4)}
+132. Let R = {(a, b) | a ≤ b} be a relation on the set of integers. The relation R is
+ reflexive, antisymmetric and transitive
+o reflexive, symmetric and transitive
+o antisymmetric and symmetric
+o non-reflexive and non-transitive
+o non-antisymmetric and non-symmetric
+133. Let R = {(1, 2), (2, 3), (3, 4), (4, 1), (4, 2)}. Find 3
+R .
+ {(1, 4), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)}
+o {(1, 3), (2, 4), (3, 1), (3, 2), (4, 2), (4, 3)}
+o {(1, 2), (2, 3), (3, 4), (4, 1), (4, 2)}
+o {(1, 1), (2, 2), (3, 3), (4, 4)}
+o {(1, 4), (2, 3), (3, 3), (4, 3)}
+134. Let 1 R = {(a, b) | a = b + 1} and 2
+R = {(a, b) | a + b ≤ 3} be relations on {0, 1, 2, 3}. Find
+R
+1 R
+2
+.
+ {(3, 2)}
+o {(1, 0), (2, 1)}
+o {(0, 0), (0, 2), (1, 2), (2, 0), (3, 0)}
+o {(1, 1), (2, 0)}
+o {(2, 1)}
+135. Represent the relation R= {(0, 1), (0, 3), (1, 2), (1, 3), (2, 0), (2, 1), (2, 3), (3, 2), (3, 3)} on
+{0, 1, 2, 3} with a matrix (with the elements of this set listed in increasing order).
+
+
+0
+    
+0
+1
+1
+0
+0
+1
+1
+0
+
+0
+0
+1
+1
+
+1
+1
+1
+    
+
+o
+
+0
+    
+1
+0
+
+1
+0
+1
+0
+1
+1
+0
+1
+1
+0
+
+0
+1
+1
+    
+
+o
+
+1
+    
+0
+1
+
+0
+0
+1
+1
+1
+1
+0
+1
+1
+0
+
+0
+1
+0
+    
+
+o
+
+0
+    
+1
+0
+
+1
+0
+0
+1
+1
+0
+0
+1
+1
+0
+
+1
+0
+1
+    
+
+o
+
+0
+    
+1
+1
+
+1
+
+1
+    
+0
+1
+
+0
+0
+1
+0
+0
+0
+1
+0
+1
+1
+0
+1
+0
+1
+0
+1
+1
+1
+
+0
+0
+0
+    
+
+0
+
+1
+0
+1
+    
+
+increasing order).
+136. List the ordered pairs in the relation on {1, 2, 3, 4} corresponding to the matrix
+(where the rows and columns correspond to the integers listed in
+ {(1, 3), (1, 4), (2, 1), (2, 2), (3, 1), (3, 3), (4, 1)}
+o {(1, 2), (1, 3), (1, 4), (2, 2), (3, 1), (3, 3), (4, 1)}
+o {(0, 2), (0, 3), (1, 0), (1, 2), (2, 0), (2, 2), (3, 0)}
+o {(0, 1), (0, 2), (0, 3), (1, 1), (2, 0), (2, 2), (3, 0)}
+o {(0, 0), (1, 1), (1, 2), (2, 1), (2, 2), (2, 4), (3, 1), (3, 2), (4, 2)}
+137. Which of the following relations on {0, 1, 2, 3, 4} is an equivalence relation?
+ {(0, 0), (0, 3), (1, 1), (2, 2), (2, 4), (3, 0), (3, 3), (4, 2), (4, 4)}
+o {(0, 0), (0, 1), (1, 0), (2, 2), (2, 4), (3, 3), (4, 2)}
+o {(1, 2), (2, 3), (1, 3), (3, 4), (1, 4), (4, 4)}
+o {(0, 0), (1, 1), (1, 3), (2, 2), (3, 2), (3, 3), (3, 4), (4, 4)}
+o {(0, 0), (0, 1), (1, 2), (0, 2), (2, 1), (3, 4), (4, 1), (3, 1)}
+138. Which of the following are posets?
+ (Z, ≥)
+o (Z,  )
+o (Z, <)
+o ( 
+Z , >)
+o (Z, >)
+139. Find two incomparable elements in the poset (P({0, 1}),  ).
+ {0} and {1}
+o  and {0, 1}
+o  and {1}
+o {0} and {0, 1}
+o {1} and {0, 1}
+140. Let S = {0, 1, 2, 3}. With respect to the lexicographic order based on the usual “less
+than” relation find all pairs in S S less than (1, 3).
+ (0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2)
+o (0, 0), (1, 1), (1, 2), (2, 0), (2, 1), (0, 1), (0, 2), (0, 3)
+o (2, 0), (2, 1), (2, 2), (3, 0), (1, 0), (1, 1), (1, 2), (0, 0), (0, 3)
+o (1, 0), (1, 1), (1, 2)
+o (0, 0), (1, 1), (2, 2), (3, 3)
+141. Find maximal elements of the poset ({1, 2, 3, 5, 6, 15, 30, 45}, |).
+ 30, 45
+o 45
+o 15, 30, 45
+o 1
+o 2, 3, 5
+142. Find minimal elements of the poset ({2, 3, 5, 6, 9, 30, 45}, |).
+ 2, 3, 5
+o 30, 45
+o 2, 3
+o 5, 6
+o 2
+143. Find the lexicographic ordering of the following strings of lowercase English letters:
+computer, computing, comma, competent, computable.
+ comma, competent, computable, computer, computing
+o computer, computable, computing, comma, competent
+o comma, computable, computer, computing, competent
+o computer, competent, comma, computing, computable
+o computable, computer, computing, competent, comma
+144. Which of the following sets is the equivalence class of 1 for congruence modulo 3?
+ {…, –5, –2, 1, 4, 7, …}
+o {…, –6, –3, 0, 3, 6, …}
+o {…, –4, –1, 2, 5, 8, …}
+o {…, –7, –4, –1, 1, 4, 7, …}
+o {…, –9, –5, 1, 5, 9, …}
+145. Let S = {1, 2, 3, 4, 5, 6, 7, 8}. Which of the following collections of sets forms a
+partition of S?
+ {1, 4, 8}, {3, 5, 7}, {2, 6}
+o {1, 2, 3, 4}, {5, 6, 7}, {7, 8}
+o {1, 2} {3, 4, 5}, {4, 6, 7, 8}
+o {1, 2, 3}, {2, 4, 6}, {5, 7, 8}
+o {1, 2, 3, 7}, {3, 4, 5, 6, 8}
+146. Find the greatest element of the poset ({2, 4, 5, 6, 10, 24, 50}, |).
+ there is no greatest element
+o 50
+o 24, 50
+o 4, 6, 10
+o 2
+147. Find the least element of the poset ({2, 3, 4, 6, 18, 36}, |).
+ there is no least element
+o 2
+o 2, 3
+o 4, 6, 18
+o 36
+148. Find the lexicographic ordering of the following 5-tuples: (1, 0, 1, 0, 1), (0, 1, 1, 1, 0),
+(0, 1, 0, 1, 0), (0, 1, 0, 0, 1), (1, 1, 0, 0, 0).
+ (0, 1, 0, 0, 1), (0, 1, 0, 1, 0), (0, 1, 1, 1, 0), (1, 0, 1, 0, 1), (1, 1, 0, 0, 0).
+o (0, 1, 0, 1, 0), (0, 1, 0, 0, 1), (0, 1, 1, 1, 0), (1, 1, 0, 0, 0), (1, 0, 1, 0, 1).
+o (1, 1, 0, 0, 0), (1, 0, 1, 0, 1), (0, 1, 0, 1, 0), (0, 1, 1, 1, 0), (0, 1, 0, 0, 1).
+o (1, 0, 1, 0, 1), (0, 1, 1, 1, 0), (0, 1, 0, 1, 0), (0, 1, 0, 0, 1), (1, 1, 0, 0, 0).
+o (0, 1, 0, 1, 0), (0, 1, 0, 0, 1), (1, 1, 0, 0, 0), (0, 1, 1, 1, 0), (1, 0, 1, 0, 1).
+149. Find maximal elements of the poset ({2, 4, 6, 7, 8, 14, 20, 21, 42}, |).
+ 8, 20, 42
+o 42
+o 8, 14, 20
+o 7, 21, 42
+o 2, 7
+150. Find minimal elements of the poset ({3, 4, 7, 8, 9, 21, 36, 72}, |).
+ 3, 4, 7
+o 3
+o 8, 9, 21
+o 21, 72
+o 3, 7, 8
+151. Find the least element of the poset ({5, 10, 25, 55, 70, 110}, |).
+ 5
+o 110
+o there is no least element
+o 25, 70, 110
+o 5, 10
+152. Find maximal elements of the poset ({3, 4, 12, 24, 48, 72}, |).
+ 48, 72
+o 48
+o 24, 48, 72
+o 3
+o 3, 4
+153. Find minimal elements of the poset ({3, 4, 12, 24, 48, 72}, |).
+ 3, 4
+o 48, 72
+o 12
+o 72
+o 4, 12
+154. Find the least element of the poset ({1, 2, 3, 9, 18}, |).
+ 1
+o 18
+o there is no least element
+o 3
+o 1, 3
+155. Which of the following relations on {0, 1, 2, 3} is an equivalence relation?
+ {(0, 0), (1, 1), (1, 2), (2, 1), (2, 2), (3, 3)}
+o {(0, 0), (0, 1), (1, 0), (2, 2), (3, 3)}
+o {(1, 2), (2, 3), (1, 3)}
+o {(0, 0), (1, 1), (1, 3), (2, 2), (3, 2), (3, 3)}
+o {(0, 0), (0, 1), (1, 2), (0, 2), (2, 1), (3, 1)}
+156. Find the lexicographic ordering of the following strings of lowercase English letters:
+open, opener, opera, operand, opened.
+ open, opened, opener, opera, operand
+o open, opener, opened, opera, operand
+o open, opened, opener, operand, opera
+o open, opener, opened, operand, opera
+o opera, operand, open, opener, opened
+157. Find two incomparable elements in the poset (P({a, b}),  ).
+ {a} and {b}
+o  and {a, b}
+o  and {a}
+o {a} and {a, b}
+o {b} and {a, b}
+158. List the ordered pairs in the relation on {1, 2, 3} corresponding to the matrix
+
+1
+0
+  
+0
+
+1
+1
+1
+1
+
+0
+0
+  
+
+(where the rows and columns correspond to the integers listed in increasing
+order).
+ {(1, 1), (1, 3), (2, 2), (3, 1), (3, 2)}
+o {(1, 2), (1, 3), (2, 1), (2, 3), (3, 2), (3, 3)}
+o {(1, 2), (2, 1), (3, 3)}
+o {(1, 1), (2, 2), (3, 1), (3, 2), (1, 2), (1, 3)}
+o {(1, 1), (1, 3), (3, 1), (3, 3)}
+159. Which of the following sets is the equivalence class of 3 for congruence modulo 5?
+ {…, –7, –2, 3, 8, 13, …}
+o {…, –8, –3, 3, 9, 15, …}
+o {…, –5, –1, 3, 7, 11, …}
+o {…, –8, –3, 2, 7, 12, …}
+o {…, –10, –5, 0, 5, 10, …}
+160. Let A be {a,b,c}. Let the relation R be {(c,c),(a,c)}. Which of the following statements
+about R is true?
+ R is not reflexive, is not symmetric, and is transitive
+o R is not reflexive, is not symmetric, and is not transitive
+o R is not reflexive, is symmetric, and is transitive
+o R is reflexive, is not symmetric, and is transitive
+o R is reflexive, is not symmetric, and is not transitive
+161. Let A be {a,b,c}. Let the relation R be {(a,c),(b,c),(c,c)}. Which of the following
+statements about R is true?
+ R is not reflexive, is not symmetric, and is transitive
+o R is not reflexive, is not symmetric, and is not transitive
+o R is not reflexive, is symmetric, and is not transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is reflexive, is not symmetric, and is transitive
+162. Let A be {a,b,c}. Let the relation R be {(a,b),(c,a),(b,a)}. Which of the following
+statements about R is true?
+ R is not reflexive, is not symmetric, and is not transitive
+o R is not reflexive, is symmetric, and is transitive
+o R is not reflexive, is symmetric, and is not transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is reflexive, is symmetric, and is transitive
+163. Let A be {a,b,c}. Let the relation R be AxA - {(a,b),(a,c),(b,a),(c,c)}. Which of the
+following statements about R is true?
+ R is not reflexive, is not symmetric, and is not transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is not reflexive, is symmetric, and is not transitive
+o R is not reflexive, is symmetric, and is transitive
+o R is reflexive, is not symmetric, and is transitive
+164. Let A be {a,b,c}. Let the relation R be AxA - {(a,a),(a,c),(c,b),(c,c)}. Which of the
+following statements about R is true?
+ R is not reflexive, is not symmetric, and is not transitive
+o R is reflexive, is symmetric, and is transitive
+o R is not reflexive, is not symmetric, and is transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is reflexive, is not symmetric, and is not transitive
+165. Let A be {a,b,c}. Let the relation R be {(c,c),(c,a)}. Which of the following statements
+about R is true?
+ R is not reflexive, is not symmetric, and is transitive
+o R is reflexive, is symmetric, and is transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is reflexive, is not symmetric, and is not transitive
+o R is reflexive, is not symmetric, and is transitive
+166. Let A be {a,b,c}. Let the relation R be AxA - {(c,a)}. Which of the following statements
+about R is true?
+ R is reflexive, is not symmetric, and is not transitive
+o R is reflexive, is not symmetric, and is transitive
+o R is not reflexive, is not symmetric, and is not transitive
+o R is reflexive, is symmetric, and is not transitive
+o R is not reflexive, is not symmetric, and is transitive
+167. Let A be {a,b,c}. Let the relation R be {(c,b)}. Which of the following statements
+about R is true?
+ R is not reflexive, is not symmetric, and is transitive
+o R is not reflexive, is not symmetric, and is not transitive
+o R is reflexive, is symmetric, and is transitive
+o R is reflexive, is not symmetric, and is not transitive
+o R is reflexive, is symmetric, and is not transitive
+168. Which of the following sets is the equivalence class of 2 for congruence modulo 4?
+ {…, –6, –2, 2, 6, 10, …}
+o {…, –8, –3, 2, 9, 15, …}
+o {…, –2, 0, 2, 4, 6, …}
+o {…, –8, –3, 2, 7, 12, …}
+o {…, –8, –4, 0, 4, 8, …}
+169. Which of the following sets is the equivalence class of 3 for congruence modulo 4?
+ {…, –5, –1, 3, 7, 11, …}
+o {…, –8, –3, 3, 9, 15, …}
+o {…, –1, 1, 3, 5, 7, …}
+o {…, –8, –3, 2, 7, 12, …}
+o {…, –8, –4, 0, 4, 8, …}
+170. List the ordered pairs in the relation R from A = {1, 2, 3, 4} to B = {1, 2, 3} where (a, b)
+ R if and only if a + b = 3.
+ {(1, 2), (2, 1)}
+o { (1, 2), (2, 1), (4, 1)}
+o {(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)}
+o {(1, 1), (2, 2), (3, 3)}
+o {(1, 2), (1, 3), (2, 3), (3, 4)}
+171. Which of the following is not correct:
+ It is true that: (‘(Z,  ) - is equivalence relation’ and ‘(Z,  ) - is not a partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation’ or ‘(Z,  ) - is partially ordered set’).
+o It is true that: (‘(Z,  ) - is not an equivalence relation’ and ‘(Z,  ) - is partially ordered set’).
+o It is true that: (‘(Z,  ) - is not an equivalence relation’ or ‘(Z,  ) - is not partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation’ or ‘(Z,  ) - is partially ordered set’).
+172. Which of the following is correct:
+ It is true that: (‘(Z,  ) - is not equivalence relation’ and ‘(Z,  ) - is partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation’ and ‘(Z,  ) - is partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation’ or ‘(Z,  ) - is not partially ordered set’).
+o It is true that: (‘(Z, ) - is not an equivalence relation’ and ‘(Z, ) - is not partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation’ and ‘(Z, ) - is partially ordered set’).
+173. Which of the following is correct:
+ It is true that: (‘(Z, )- is not equivalence relation’ implies that ‘(Z, )- is partially ordered set’).
+o It is true that: (‘(Z, )- is not an equivalence relation' implies that ‘(Z,  )- is not partially
+ordered set’).
+o It is false that: (‘(Z,  ) - is an equivalence relation’ or ‘(Z,  ) - is partially ordered set’).
+o It is true that: (‘(Z, ) - is not an equivalence relation’ and ‘(Z, ) - is not partially ordered set’).
+o It is true that: (‘(Z,  ) - is an equivalence relation' and ‘(Z, ) - is partially ordered set’).
+174. Which of the following is not correct:
+ It is true that: (‘(Z, )- is not equivalence relation' implies that '(Z, )- is not partially ordered
+set').
+o It is true that: (‘(Z, )- is an equivalence relation’ implies that ‘(Z, )- is not partially ordered
+set’).
+o It is false that: (‘(Z,  ) - is an equivalence relation’ or ‘(Z,  ) - is not partially ordered set’).
+o It is false that: (‘(Z, ) - is not an equivalence relation’ and ‘(Z, ) - is not partially ordered set’).
+o It is false that: (‘(Z,  ) - is an equivalence relation’ and ‘(Z, ) - is partially ordered set’).
+q/8категория
+175. The contrapositive of q
+
+
+q 
+p  is the proposition p
+.
+176. A compound proposition that is always false is called a tautology.
+177. The propositions p and q are logically equivalent if q
+p  is a tautology.
+( q
+p 
+178. The proposition )
+p 
+ is logically equivalent to q
+.
+
+x 
+y
+( y
+x
+179. The negation of )
+
+
+x 
+( y
+x
+ is )
+y
+.
+180. Let A and B be sets. The intersection of A and B is the set that contains those
+elements that are in A but not in B.
+181. Let A and B be sets. The union of A and B is the set that contains those elements
+that are either in A or in B, or in both.
+182. A relation S on a set B is reflexive if (b, c) S whenever (c, b) S for all b, c B.
+  
+B
+A 
+C
+183. According to De Morgan’s laws,  
+A 
+
+B
+C
+.
+184. Let R = {(1, 1), (1, 2), (2, 1), (2, 2), (2, 3), (3, 2), (4, 4)} be a relation on {1, 2, 3, 4}. The
+relation R is Reflexive.
+q/9категория
+185. Find   98 , 1
+ 1
+186. Find  
+34 , 2
+ -3
+/
+1 
+10
+9
+/
+10
+187. Find  
+ 
+ 1
+/
+1 
+10
+9
+/
+10
+188. Find  
+ 
+ 1
+ 32
+ 16
+ 24
+ 60
+189. How many bit strings of length 7 begin and end with a 0?
+190. How many bit strings of length 5 begin with a 1?
+191. How many permutations of {1, 2, 3, 4, 5} end with 3?
+192. Let S = {1, 2, 3, 4, 5}. How many 3-permutations of S are there?
+193. Find C(7, 5).
+ 21
+194. How many different strings can be made from the letters in ORONO, using all the
+letters?
+ 20
+195. How many ways a 6 member team can be formed having 3 men and 3 ladies from a
+group of 6 men and 7 ladies?
+ 700
+196. A box contains 2 red coins, 3 green coins and 4 blue coins. In how many ways can 3
+coins be chosen such that at least one coin is green?
+ 64
+197. How many prime numbers are there between 1 to 20?
+ 8
+198. Evaluate the expression 6359 mod 320?
+ 279
+199. Find the greatest element of the poset ({1, 2, 3, 6, 7, 42, 126}, |).
+ 126
+Всего 30 вопросов. Количество
+вопросов
+q/1категория 4
+q/2категория 3
+q/3категория 4
+q/4категория 5
+q/5категория 4
+q/6категория 4
+q/7категория 4
+q/8категория 1
+q/9категория 1

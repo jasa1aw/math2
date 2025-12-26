@@ -1,8 +1,18 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { QUESTIONS_BANK } from './questions';
-import { QuizStatus, UserAnswer, Question } from './types';
+import { QuizStatus, UserAnswer, Question, Option } from './types';
 import QuizHeader from './components/QuizHeader';
+
+// Utility to shuffle arrays
+function shuffleArray<T>(array: T[]): T[] {
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+}
 
 const OptionButton: React.FC<{
   text: string;
@@ -38,25 +48,24 @@ const OptionButton: React.FC<{
       disabled={disabled}
       onClick={onClick}
       className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${borderColor} ${bgColor} ${textColor} ${
-        !disabled ? 'hover:shadow-md' : ''
+        !disabled ? 'hover:scale-[1.01] hover:shadow-md' : ''
       }`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${
+          <div className={`w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center transition-colors ${
             isRevealed && isCorrect ? 'border-green-600 bg-green-600' : 
             isRevealed && isWrong ? 'border-red-600 bg-red-600' :
             isSelected ? 'border-indigo-600 bg-indigo-600' : 'border-slate-300'
           }`}>
-            {(isSelected || (isRevealed && isCorrect)) && <div className="w-2 h-2 rounded-full bg-white" />}
+            {(isSelected || (isRevealed && isCorrect)) && (
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            )}
           </div>
           <span className="font-medium text-lg">{text}</span>
         </div>
-        {isRevealed && isCorrect && (
-          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        )}
       </div>
     </button>
   );
@@ -64,24 +73,33 @@ const OptionButton: React.FC<{
 
 const App: React.FC = () => {
   const [status, setStatus] = useState<QuizStatus>('idle');
+  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [streak, setStreak] = useState(0);
 
-  const currentQuizQuestions = useMemo(() => QUESTIONS_BANK.slice(0, 15), []);
-  const currentQuestion = currentQuizQuestions[currentIndex];
-  const progress = ((currentIndex) / currentQuizQuestions.length) * 100;
-
-  const handleStart = () => {
+  // Initialize and shuffle everything
+  const handleStart = useCallback(() => {
+    // 1. Shuffle all questions
+    const shuffledQ = shuffleArray(QUESTIONS_BANK).map(q => ({
+      ...q,
+      // 2. Shuffle options inside each question
+      options: shuffleArray(q.options)
+    }));
+    
+    setShuffledQuestions(shuffledQ);
     setStatus('active');
     setCurrentIndex(0);
     setUserAnswers([]);
     setSelectedOptionId(null);
     setIsAnswered(false);
     setStreak(0);
-  };
+  }, []);
+
+  const currentQuestion = shuffledQuestions[currentIndex];
+  const progress = ((currentIndex) / shuffledQuestions.length) * 100;
 
   const handleSubmitAnswer = () => {
     if (!selectedOptionId || isAnswered) return;
@@ -104,7 +122,7 @@ const App: React.FC = () => {
   };
 
   const handleNext = () => {
-    if (currentIndex < currentQuizQuestions.length - 1) {
+    if (currentIndex < shuffledQuestions.length - 1) {
       setCurrentIndex(prev => prev + 1);
       setSelectedOptionId(null);
       setIsAnswered(false);
@@ -118,51 +136,57 @@ const App: React.FC = () => {
   if (status === 'idle') {
     return (
       <div className="max-w-2xl mx-auto pt-20 px-4 text-center">
-        <div className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100">
-          <div className="w-24 h-24 bg-indigo-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg rotate-3 hover:rotate-0 transition-transform cursor-pointer">
-            <span className="text-4xl font-black">?</span>
+        <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+          <div className="w-24 h-24 bg-indigo-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl rotate-6">
+            <span className="text-5xl font-black">200</span>
           </div>
-          <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Discrete Math Trainer</h1>
-          <p className="text-slate-600 text-lg mb-8">
-            Learn propositional logic and sets with instant feedback. Perfect for fast memorization.
+          <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">Logic & Discrete Math</h1>
+          <p className="text-slate-500 text-lg mb-10 leading-relaxed max-w-sm mx-auto">
+            Interactive trainer with all questions and options fully randomized every time.
           </p>
-          <button 
-            onClick={handleStart}
-            className="bg-indigo-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100"
-          >
-            Start Learning
-          </button>
+          <div className="space-y-4">
+            <button 
+              onClick={handleStart}
+              className="w-full bg-indigo-600 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 active:scale-95"
+            >
+              Start Randomized Quiz
+            </button>
+            <p className="text-xs text-slate-400 font-medium uppercase tracking-widest">
+              Questions & Answers are Shuffled
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
-  if (status === 'active') {
+  if (status === 'active' && currentQuestion) {
     return (
-      <div className="max-w-3xl mx-auto pt-8 px-4 pb-20">
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-3">
-            <div className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-bold text-sm flex items-center">
-              <span className="mr-1">🔥</span> Streak: {streak}
+      <div className="max-w-3xl mx-auto pt-6 px-4 pb-24">
+        <div className="flex justify-between items-center mb-6 bg-white/50 backdrop-blur p-3 rounded-2xl border border-slate-100">
+          <div className="flex items-center gap-4">
+             <div className="flex items-center bg-orange-50 text-orange-600 px-4 py-1.5 rounded-xl font-bold border border-orange-100">
+              <span className="mr-2 text-lg">🔥</span> {streak}
             </div>
-            <div className="bg-green-100 text-green-600 px-3 py-1 rounded-full font-bold text-sm flex items-center">
-              Score: {score}/{userAnswers.length}
+            <div className="h-6 w-px bg-slate-200" />
+            <div className="text-slate-600 font-bold">
+              <span className="text-indigo-600">{score}</span> / {userAnswers.length} Correct
             </div>
           </div>
-          <span className="text-slate-400 font-medium">Question {currentIndex + 1}/{currentQuizQuestions.length}</span>
+          <div className="text-slate-400 font-bold tabular-nums">
+            {currentIndex + 1} of {shuffledQuestions.length}
+          </div>
         </div>
 
-        <QuizHeader 
-          title="Logic & Sets Quiz" 
-          progress={progress}
-        />
+        <QuizHeader title="Discrete Math Challenge" progress={progress} />
         
-        <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 mb-6 transition-all">
-          <h2 className="text-2xl font-bold text-slate-800 mb-8 leading-tight">
+        <div className="bg-white p-8 sm:p-10 rounded-[2.5rem] shadow-xl border border-slate-100 mb-6 relative group">
+          <h2 className="text-2xl font-bold text-slate-800 mb-10 leading-[1.4] transition-colors">
             {currentQuestion.text}
           </h2>
           
-          <div className="grid gap-3 mb-8">
+          <div className="grid gap-4 mb-10">
             {currentQuestion.options.map(opt => {
               const isCorrect = opt.id === currentQuestion.correctOptionId;
               const isUserChoice = opt.id === selectedOptionId;
@@ -183,28 +207,33 @@ const App: React.FC = () => {
           </div>
 
           {isAnswered && (
-            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <h4 className="font-bold text-slate-800 mb-2 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Logic Breakdown:
-              </h4>
-              <p className="text-slate-600 leading-relaxed italic">
-                {currentQuestion.explanation || "This is a fundamental concept in discrete mathematics. Review the definition for better understanding."}
+            <div className="animate-in slide-in-from-top-4 fade-in duration-500 bg-indigo-50/50 p-6 rounded-[1.5rem] border-2 border-indigo-100">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center mr-3 font-bold">!</div>
+                <h4 className="font-bold text-indigo-900 text-lg">Quick Memory Hack:</h4>
+              </div>
+              <p className="text-indigo-800 leading-relaxed font-medium">
+                {currentQuestion.explanation}
               </p>
             </div>
           )}
         </div>
 
-        <div className="flex justify-end gap-4">
+        <div className="flex justify-between items-center px-2">
+           <button 
+             onClick={() => setStatus('idle')}
+             className="text-slate-400 font-bold hover:text-slate-600 transition-colors"
+           >
+             Exit Quiz
+           </button>
+          
           {!isAnswered ? (
             <button
               disabled={!selectedOptionId}
               onClick={handleSubmitAnswer}
-              className={`px-10 py-4 rounded-2xl font-bold text-lg transition-all ${
+              className={`px-12 py-5 rounded-[1.25rem] font-black text-lg transition-all ${
                 selectedOptionId 
-                  ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg' 
+                  ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-xl shadow-indigo-100 active:scale-95' 
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'
               }`}
             >
@@ -213,11 +242,11 @@ const App: React.FC = () => {
           ) : (
             <button
               onClick={handleNext}
-              className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg flex items-center animate-bounce-subtle"
+              className="bg-slate-900 text-white px-12 py-5 rounded-[1.25rem] font-black text-lg hover:bg-black shadow-xl transition-all flex items-center active:scale-95"
             >
-              {currentIndex === currentQuizQuestions.length - 1 ? 'See Results' : 'Next Challenge'}
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              {currentIndex === shuffledQuestions.length - 1 ? 'Finish' : 'Keep Going'}
+              <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
           )}
@@ -227,31 +256,40 @@ const App: React.FC = () => {
   }
 
   if (status === 'completed') {
-    const percentage = (score / currentQuizQuestions.length) * 100;
+    const percentage = (score / shuffledQuestions.length) * 100;
     return (
       <div className="max-w-2xl mx-auto pt-16 px-4 pb-20">
-        <div className="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 text-center">
-          <div className="text-6xl mb-4">
-            {percentage === 100 ? '🥇' : percentage > 70 ? '🎉' : '📚'}
+        <div className="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-100 text-center relative overflow-hidden">
+           <div className="absolute top-0 left-0 w-full h-3 bg-indigo-600" />
+          <div className="text-7xl mb-6">
+            {percentage === 100 ? '👑' : percentage > 80 ? '⭐' : '📖'}
           </div>
-          <h1 className="text-3xl font-extrabold text-slate-900 mb-2">Quiz Results</h1>
-          <div className="text-5xl font-black text-indigo-600 mb-6">{Math.round(percentage)}%</div>
-          <p className="text-slate-500 mb-8 max-w-sm mx-auto">
-            You nailed {score} questions! {percentage < 100 ? "Use 'Review' below to look at the ones you missed." : "Perfect score! You're a logic master."}
-          </p>
+          <h1 className="text-4xl font-black text-slate-900 mb-2">Final Mastery</h1>
+          <div className="text-6xl font-black text-indigo-600 mb-8 tracking-tighter">{Math.round(percentage)}%</div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => setStatus('review')}
-              className="bg-slate-100 text-slate-700 px-8 py-4 rounded-2xl font-bold hover:bg-slate-200 transition-all"
-            >
-              Full Review
-            </button>
+          <div className="grid grid-cols-2 gap-4 mb-10">
+            <div className="bg-slate-50 p-4 rounded-2xl">
+              <div className="text-slate-400 text-xs font-bold uppercase mb-1">Correct</div>
+              <div className="text-2xl font-black text-slate-800">{score}</div>
+            </div>
+            <div className="bg-slate-50 p-4 rounded-2xl">
+              <div className="text-slate-400 text-xs font-bold uppercase mb-1">Attempted</div>
+              <div className="text-2xl font-black text-slate-800">{shuffledQuestions.length}</div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col gap-3">
             <button 
               onClick={handleStart}
-              className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg"
+              className="bg-indigo-600 text-white px-8 py-5 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100"
             >
-              Play Again
+              New Shuffled Session
+            </button>
+            <button 
+              onClick={() => setStatus('review')}
+              className="text-slate-500 font-bold hover:text-indigo-600 py-2"
+            >
+              Review Mistakes
             </button>
           </div>
         </div>
@@ -259,47 +297,67 @@ const App: React.FC = () => {
     );
   }
 
-  // Reuse the Review UI from the previous version, ensuring it still works with the new data
   if (status === 'review') {
     return (
       <div className="max-w-4xl mx-auto pt-10 px-4 pb-20">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-slate-900">Post-Quiz Analysis</h1>
-          <button onClick={handleStart} className="text-indigo-600 font-bold hover:underline">Restart Quiz</button>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+          <div>
+            <h1 className="text-4xl font-black text-slate-900">Analysis</h1>
+            <p className="text-slate-500 font-medium text-lg">Detailed logic breakdown</p>
+          </div>
+          <button 
+            onClick={handleStart}
+            className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700"
+          >
+            Play Again
+          </button>
         </div>
+        
         <div className="space-y-6">
-          {currentQuizQuestions.map((q, idx) => {
+          {shuffledQuestions.map((q, idx) => {
             const userAnswer = userAnswers.find(a => a.questionId === q.id);
-            const isCorrect = userAnswer?.isCorrect;
-            const selectedOpt = q.options.find(o => o.id === userAnswer?.selectedOptionId);
+            if (!userAnswer) return null;
+            const isCorrect = userAnswer.isCorrect;
+            const selectedOpt = q.options.find(o => o.id === userAnswer.selectedOptionId);
             const correctOpt = q.options.find(o => o.id === q.correctOptionId);
 
             return (
-              <div key={q.id} className="bg-white p-6 rounded-2xl shadow border border-slate-100 relative">
-                <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${isCorrect ? 'bg-green-500' : 'bg-red-500'}`} />
-                <h3 className="text-lg font-bold text-slate-800 mb-4">{idx + 1}. {q.text}</h3>
-                <div className="space-y-3">
-                   <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
-                      <div className="text-xs font-bold uppercase mb-1">Your Answer</div>
-                      <div>{selectedOpt?.text || "None"}</div>
-                   </div>
-                   {!isCorrect && (
-                     <div className="p-4 rounded-xl bg-indigo-50 text-indigo-800">
-                        <div className="text-xs font-bold uppercase mb-1">Correct Answer</div>
-                        <div>{correctOpt?.text}</div>
-                     </div>
-                   )}
-                   <div className="p-4 bg-slate-50 rounded-xl text-slate-600 text-sm">
-                      <span className="font-bold block mb-1">Explanation:</span>
-                      {q.explanation}
-                   </div>
+              <div key={q.id} className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 relative group overflow-hidden">
+                <div className={`absolute left-0 top-0 bottom-0 w-2 ${isCorrect ? 'bg-green-500' : 'bg-red-500'}`} />
+                <div className="flex gap-6">
+                  <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm ${isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    {idx + 1}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6 leading-relaxed">{q.text}</h3>
+                    
+                    <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                      <div className={`p-5 rounded-2xl border-2 ${isCorrect ? 'bg-green-50/50 border-green-100 text-green-800' : 'bg-red-50/50 border-red-100 text-red-800'}`}>
+                        <div className="text-[10px] font-black uppercase mb-1 tracking-widest opacity-60">Your Choice</div>
+                        <div className="font-bold text-lg">{selectedOpt?.text || "Not answered"}</div>
+                      </div>
+                      {!isCorrect && (
+                        <div className="p-5 rounded-2xl bg-indigo-50 border-2 border-indigo-100 text-indigo-800">
+                          <div className="text-[10px] font-black uppercase mb-1 tracking-widest opacity-60 text-indigo-400">Correct Answer</div>
+                          <div className="font-bold text-lg">{correctOpt?.text}</div>
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div className="p-6 bg-slate-50 rounded-2xl">
+                      <div className="flex items-center mb-2">
+                        <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2" />
+                        <span className="text-xs font-black uppercase text-slate-400 tracking-widest">Logic Reminder</span>
+                      </div>
+                      <p className="text-slate-600 font-medium leading-relaxed italic">
+                        {q.explanation}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
           })}
-        </div>
-        <div className="mt-8 flex justify-center">
-            <button onClick={handleStart} className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold">Try Again</button>
         </div>
       </div>
     );
