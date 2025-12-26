@@ -47,17 +47,15 @@ const OptionButton: React.FC<{
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${borderColor} ${bgColor} ${textColor} ${
-        !disabled ? 'hover:scale-[1.01] hover:shadow-md' : ''
-      }`}
+      className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${borderColor} ${bgColor} ${textColor} ${!disabled ? 'hover:scale-[1.01] hover:shadow-md' : ''
+        }`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <div className={`w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center transition-colors ${
-            isRevealed && isCorrect ? 'border-green-600 bg-green-600' : 
+          <div className={`w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center transition-colors ${isRevealed && isCorrect ? 'border-green-600 bg-green-600' :
             isRevealed && isWrong ? 'border-red-600 bg-red-600' :
-            isSelected ? 'border-indigo-600 bg-indigo-600' : 'border-slate-300'
-          }`}>
+              isSelected ? 'border-indigo-600 bg-indigo-600' : 'border-slate-300'
+            }`}>
             {(isSelected || (isRevealed && isCorrect)) && (
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -88,7 +86,7 @@ const App: React.FC = () => {
       // 2. Shuffle options inside each question
       options: shuffleArray(q.options)
     }));
-    
+
     setShuffledQuestions(shuffledQ);
     setStatus('active');
     setCurrentIndex(0);
@@ -101,23 +99,30 @@ const App: React.FC = () => {
   const currentQuestion = shuffledQuestions[currentIndex];
   const progress = ((currentIndex) / shuffledQuestions.length) * 100;
 
-  const handleSubmitAnswer = () => {
-    if (!selectedOptionId || isAnswered) return;
+  const handleSubmitAnswer = (optionId: string) => {
+    if (isAnswered) return;
 
-    const isCorrect = selectedOptionId === currentQuestion.correctOptionId;
+    const isCorrect = optionId === currentQuestion.correctOptionId;
     const newAnswer: UserAnswer = {
       questionId: currentQuestion.id,
-      selectedOptionId,
+      selectedOptionId: optionId,
       isCorrect,
     };
 
+    setSelectedOptionId(optionId);
     setUserAnswers(prev => [...prev, newAnswer]);
     setIsAnswered(true);
-    
+
     if (isCorrect) {
       setStreak(prev => prev + 1);
     } else {
       setStreak(0);
+    }
+  };
+
+  const handleOptionClick = (optionId: string) => {
+    if (!isAnswered) {
+      handleSubmitAnswer(optionId);
     }
   };
 
@@ -146,7 +151,7 @@ const App: React.FC = () => {
             Interactive trainer with all questions and options fully randomized every time.
           </p>
           <div className="space-y-4">
-            <button 
+            <button
               onClick={handleStart}
               className="w-full bg-indigo-600 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 active:scale-95"
             >
@@ -166,7 +171,7 @@ const App: React.FC = () => {
       <div className="max-w-3xl mx-auto pt-6 px-4 pb-24">
         <div className="flex justify-between items-center mb-6 bg-white/50 backdrop-blur p-3 rounded-2xl border border-slate-100">
           <div className="flex items-center gap-4">
-             <div className="flex items-center bg-orange-50 text-orange-600 px-4 py-1.5 rounded-xl font-bold border border-orange-100">
+            <div className="flex items-center bg-orange-50 text-orange-600 px-4 py-1.5 rounded-xl font-bold border border-orange-100">
               <span className="mr-2 text-lg">🔥</span> {streak}
             </div>
             <div className="h-6 w-px bg-slate-200" />
@@ -180,19 +185,19 @@ const App: React.FC = () => {
         </div>
 
         <QuizHeader title="Discrete Math Challenge" progress={progress} />
-        
+
         <div className="bg-white p-8 sm:p-10 rounded-[2.5rem] shadow-xl border border-slate-100 mb-6 relative group">
           <h2 className="text-2xl font-bold text-slate-800 mb-10 leading-[1.4] transition-colors">
             {currentQuestion.text}
           </h2>
-          
+
           <div className="grid gap-4 mb-10">
             {currentQuestion.options.map(opt => {
               const isCorrect = opt.id === currentQuestion.correctOptionId;
               const isUserChoice = opt.id === selectedOptionId;
-              
+
               return (
-                <OptionButton 
+                <OptionButton
                   key={opt.id}
                   text={opt.text}
                   isSelected={isUserChoice}
@@ -200,7 +205,7 @@ const App: React.FC = () => {
                   isCorrect={isAnswered && isCorrect}
                   isWrong={isAnswered && isUserChoice && !isCorrect}
                   disabled={isAnswered}
-                  onClick={() => setSelectedOptionId(opt.id)}
+                  onClick={() => handleOptionClick(opt.id)}
                 />
               );
             })}
@@ -220,26 +225,14 @@ const App: React.FC = () => {
         </div>
 
         <div className="flex justify-between items-center px-2">
-           <button 
-             onClick={() => setStatus('idle')}
-             className="text-slate-400 font-bold hover:text-slate-600 transition-colors"
-           >
-             Exit Quiz
-           </button>
-          
-          {!isAnswered ? (
-            <button
-              disabled={!selectedOptionId}
-              onClick={handleSubmitAnswer}
-              className={`px-12 py-5 rounded-[1.25rem] font-black text-lg transition-all ${
-                selectedOptionId 
-                  ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-xl shadow-indigo-100 active:scale-95' 
-                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              }`}
-            >
-              Check Answer
-            </button>
-          ) : (
+          <button
+            onClick={() => setStatus('idle')}
+            className="text-slate-400 font-bold hover:text-slate-600 transition-colors"
+          >
+            Exit Quiz
+          </button>
+
+          {isAnswered && (
             <button
               onClick={handleNext}
               className="bg-slate-900 text-white px-12 py-5 rounded-[1.25rem] font-black text-lg hover:bg-black shadow-xl transition-all flex items-center active:scale-95"
@@ -260,13 +253,13 @@ const App: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto pt-16 px-4 pb-20">
         <div className="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-100 text-center relative overflow-hidden">
-           <div className="absolute top-0 left-0 w-full h-3 bg-indigo-600" />
+          <div className="absolute top-0 left-0 w-full h-3 bg-indigo-600" />
           <div className="text-7xl mb-6">
             {percentage === 100 ? '👑' : percentage > 80 ? '⭐' : '📖'}
           </div>
           <h1 className="text-4xl font-black text-slate-900 mb-2">Final Mastery</h1>
           <div className="text-6xl font-black text-indigo-600 mb-8 tracking-tighter">{Math.round(percentage)}%</div>
-          
+
           <div className="grid grid-cols-2 gap-4 mb-10">
             <div className="bg-slate-50 p-4 rounded-2xl">
               <div className="text-slate-400 text-xs font-bold uppercase mb-1">Correct</div>
@@ -277,15 +270,15 @@ const App: React.FC = () => {
               <div className="text-2xl font-black text-slate-800">{shuffledQuestions.length}</div>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-3">
-            <button 
+            <button
               onClick={handleStart}
               className="bg-indigo-600 text-white px-8 py-5 rounded-2xl font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100"
             >
               New Shuffled Session
             </button>
-            <button 
+            <button
               onClick={() => setStatus('review')}
               className="text-slate-500 font-bold hover:text-indigo-600 py-2"
             >
@@ -305,14 +298,14 @@ const App: React.FC = () => {
             <h1 className="text-4xl font-black text-slate-900">Analysis</h1>
             <p className="text-slate-500 font-medium text-lg">Detailed logic breakdown</p>
           </div>
-          <button 
+          <button
             onClick={handleStart}
             className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700"
           >
             Play Again
           </button>
         </div>
-        
+
         <div className="space-y-6">
           {shuffledQuestions.map((q, idx) => {
             const userAnswer = userAnswers.find(a => a.questionId === q.id);
@@ -330,7 +323,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-slate-800 mb-6 leading-relaxed">{q.text}</h3>
-                    
+
                     <div className="grid sm:grid-cols-2 gap-4 mb-6">
                       <div className={`p-5 rounded-2xl border-2 ${isCorrect ? 'bg-green-50/50 border-green-100 text-green-800' : 'bg-red-50/50 border-red-100 text-red-800'}`}>
                         <div className="text-[10px] font-black uppercase mb-1 tracking-widest opacity-60">Your Choice</div>
@@ -343,7 +336,7 @@ const App: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     <div className="p-6 bg-slate-50 rounded-2xl">
                       <div className="flex items-center mb-2">
                         <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2" />
